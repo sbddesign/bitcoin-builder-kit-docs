@@ -12,8 +12,16 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', slug: 'guides/example' },
+						{
+							label: 'Bitcoin Tip Jar',
+							items: [
+								{ label: 'Getting Started', slug: 'guides/bitcoin-tip-jar/getting-started' },
+								{ label: 'Configuration', slug: 'guides/bitcoin-tip-jar/configuration' },
+								{ label: 'Customization', slug: 'guides/bitcoin-tip-jar/customization' },
+								{ label: 'Advanced Usage', slug: 'guides/bitcoin-tip-jar/advanced-usage' },
+							],
+						},
 					],
 				},
 				{
@@ -26,6 +34,24 @@ export default defineConfig({
 								{ label: 'Components', slug: 'packages/ui/components' },
 								{ label: 'Themes', slug: 'packages/ui/themes' },
 								{ label: 'Utilities', slug: 'packages/ui/utilities' },
+							],
+						},
+						{
+							label: 'Tokens',
+							items: [
+								{ label: 'Overview', slug: 'packages/tokens' },
+								{ label: 'Colors', slug: 'packages/tokens/colors' },
+								{ label: 'Typography', slug: 'packages/tokens/typography' },
+								{ label: 'Spacing', slug: 'packages/tokens/spacing' },
+							],
+						},
+						{
+							label: 'Icons',
+							items: [
+								{ label: 'Overview', slug: 'packages/icons' },
+								{ label: 'Icon Library', slug: 'packages/icons/library' },
+								{ label: 'Usage', slug: 'packages/icons/usage' },
+								{ label: 'Custom Icons', slug: 'packages/icons/custom' },
 							],
 						},
 					],

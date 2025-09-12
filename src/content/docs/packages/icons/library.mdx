@@ -1,0 +1,130 @@
+---
+title: Icon Library
+description: Browse the complete collection of available icons
+---
+
+# Icon Library
+
+Our icon library contains 500+ carefully crafted icons covering common use cases and interface patterns.
+
+## Categories
+
+### Interface Icons
+
+Common UI elements and actions.
+
+### JavaScript (Web Components)
+
+```javascript
+// Icon grid component
+class IconGrid extends HTMLElement {
+  connectedCallback() {
+    const icons = [
+      'home', 'search', 'menu', 'close', 'arrow-left', 'arrow-right',
+      'plus', 'minus', 'edit', 'delete', 'save', 'cancel'
+    ];
+    
+    this.innerHTML = `
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem;">
+        ${icons.map(icon => `
+          <div style="text-align: center; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 8px;">
+            <icon-component name="${icon}" size="32"></icon-component>
+            <div style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">${icon}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+}
+
+customElements.define('icon-grid', IconGrid);
+```
+
+### React
+
+```tsx
+import { Icon } from '@your-package/icons';
+
+const interfaceIcons = [
+  'home', 'search', 'menu', 'close', 'arrow-left', 'arrow-right',
+  'plus', 'minus', 'edit', 'delete', 'save', 'cancel'
+];
+
+function IconGrid() {
+  return (
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+      gap: '1rem'
+    }}>
+      {interfaceIcons.map(icon => (
+        <div 
+          key={icon}
+          style={{
+            textAlign: 'center',
+            padding: '1rem',
+            border: '1px solid #e5e7eb',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#f9fafb';
+            e.currentTarget.style.borderColor = '#3b82f6';
+          }}
+        >
+          <Icon name={icon} size={32} />
+          <div style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>
+            {icon}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+## Social Icons
+
+Social media and communication icons.
+
+```tsx
+// Social icon component
+function SocialIcon({ platform, href, size = 24 }) {
+  const socialIcons = {
+    twitter: 'twitter',
+    facebook: 'facebook',
+    instagram: 'instagram',
+    linkedin: 'linkedin',
+    github: 'github',
+    youtube: 'youtube'
+  };
+
+  return (
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style={{ display: 'inline-block' }}
+    >
+      <Icon 
+        name={socialIcons[platform]} 
+        size={size}
+        color="currentColor"
+      />
+    </a>
+  );
+}
+```
+
+## File Type Icons
+
+Icons for different file types and formats.
+
+| Icon | Name | Usage |
+|------|------|-------|
+| 📄 | `file` | Generic file |
+| 📁 | `folder` | Directory |
+| 🖼️ | `image` | Image files |
+| 📊 | `chart` | Data files |
+| 🔗 | `link` | External links |

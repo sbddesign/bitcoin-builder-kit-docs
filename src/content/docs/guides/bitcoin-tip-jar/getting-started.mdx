@@ -1,0 +1,67 @@
+---
+title: Getting Started
+description: Quick start guide for Bitcoin Tip Jar integration
+---
+
+# Getting Started with Bitcoin Tip Jar
+
+Learn how to quickly integrate Bitcoin Tip Jar into your application and start accepting Bitcoin tips.
+
+## Installation
+
+### JavaScript (Web Components)
+
+```javascript
+// Install via CDN
+<script src="https://unpkg.com/@bitcoin-tip-jar/core@latest/dist/bitcoin-tip-jar.js"></script>
+
+// Or install via npm
+// npm install @bitcoin-tip-jar/core
+
+// Register the component
+customElements.define('bitcoin-tip-jar', BitcoinTipJar);
+
+// Basic usage
+const tipJar = document.createElement('bitcoin-tip-jar');
+tipJar.setAttribute('address', 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh');
+tipJar.setAttribute('amount', '0.0001');
+document.body.appendChild(tipJar);
+```
+
+### React
+
+```tsx
+import { BitcoinTipJar } from '@bitcoin-tip-jar/react';
+
+function App() {
+  return (
+    <div>
+      <h1>Support My Work</h1>
+      <BitcoinTipJar 
+        address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+        amount={0.0001}
+        onTip={(amount) => console.log('Tip received:', amount)}
+      />
+    </div>
+  );
+}
+```
+
+## Basic Configuration
+
+Set up your Bitcoin address and configure basic settings.
+
+```javascript
+// Configure tip jar
+const tipJar = document.createElement('bitcoin-tip-jar');
+tipJar.setAttribute('address', 'your-bitcoin-address');
+tipJar.setAttribute('amount', '0.0001'); // Default tip amount in BTC
+tipJar.setAttribute('currency', 'btc'); // Display currency
+tipJar.setAttribute('theme', 'light'); // Theme: light, dark, auto
+```
+
+## Next Steps
+
+- [Configuration](/guides/bitcoin-tip-jar/configuration) - Advanced configuration options
+- [Customization](/guides/bitcoin-tip-jar/customization) - Styling and theming
+- [Advanced Usage](/guides/bitcoin-tip-jar/advanced-usage) - Advanced features and integrations

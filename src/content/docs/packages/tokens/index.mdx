@@ -1,0 +1,50 @@
+---
+title: Design Tokens Overview
+description: Overview of design tokens for consistent styling
+---
+
+# Design Tokens
+
+Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes.
+
+## What's Included
+
+- **Colors** - Color palette and semantic color tokens
+- **Typography** - Font families, sizes, and text styles
+- **Spacing** - Consistent spacing scale and layout tokens
+
+## Getting Started
+
+Design tokens provide a single source of truth for design decisions, ensuring consistency across all platforms and applications.
+
+## Usage Examples
+
+### JavaScript (Web Components)
+
+```javascript
+// Using CSS custom properties
+const button = document.createElement('button');
+button.style.setProperty('--color-primary', 'var(--token-color-primary-500)');
+button.style.setProperty('--spacing-md', 'var(--token-spacing-md)');
+button.textContent = 'Click me';
+```
+
+### React
+
+```tsx
+import { tokens } from '@your-package/tokens';
+
+function Button({ children }) {
+  return (
+    <button 
+      style={{
+        backgroundColor: tokens.colors.primary[500],
+        padding: tokens.spacing.md,
+        fontFamily: tokens.typography.fontFamily.sans
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+```

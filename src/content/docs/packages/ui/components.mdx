@@ -11,6 +11,60 @@ This section documents all available UI components in the package.
 
 A versatile button component with multiple variants.
 
+### JavaScript (Web Components)
+
+```javascript
+// Create a button component
+class ButtonComponent extends HTMLElement {
+  static get observedAttributes() {
+    return ['variant', 'size', 'disabled'];
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback() {
+    this.render();
+  }
+
+  render() {
+    const variant = this.getAttribute('variant') || 'primary';
+    const size = this.getAttribute('size') || 'medium';
+    const disabled = this.getAttribute('disabled') !== null;
+    
+    this.innerHTML = `
+      <button 
+        class="btn btn-${variant} btn-${size}" 
+        ${disabled ? 'disabled' : ''}
+        style="
+          padding: ${size === 'small' ? '8px 16px' : size === 'large' ? '16px 32px' : '12px 24px'};
+          background: ${variant === 'primary' ? '#3b82f6' : variant === 'secondary' ? '#6b7280' : '#ef4444'};
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: ${size === 'small' ? '14px' : size === 'large' ? '18px' : '16px'};
+          transition: all 0.2s ease;
+        "
+      >
+        <slot></slot>
+      </button>
+    `;
+  }
+}
+
+customElements.define('button-component', ButtonComponent);
+
+// Usage
+const button = document.createElement('button-component');
+button.setAttribute('variant', 'primary');
+button.setAttribute('size', 'medium');
+button.textContent = 'Click me';
+```
+
+### React
+
 ```tsx
 import { Button } from '@your-package/ui'
 
@@ -20,6 +74,40 @@ import { Button } from '@your-package/ui'
 ## Card
 
 A container component for grouping related content.
+
+### JavaScript (Web Components)
+
+```javascript
+// Create a card component
+class CardComponent extends HTMLElement {
+  connectedCallback() {
+    this.style.cssText = `
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin: 1rem 0;
+    `;
+    
+    this.innerHTML = `
+      <div class="card-content">
+        <slot></slot>
+      </div>
+    `;
+  }
+}
+
+customElements.define('card-component', CardComponent);
+
+// Usage
+const card = document.createElement('card-component');
+card.innerHTML = `
+  <h3>Card Title</h3>
+  <p>Card content goes here</p>
+`;
+```
+
+### React
 
 ```tsx
 import { Card } from '@your-package/ui'
@@ -33,6 +121,74 @@ import { Card } from '@your-package/ui'
 ## Input
 
 Form input components with validation support.
+
+### JavaScript (Web Components)
+
+```javascript
+// Create an input component
+class InputComponent extends HTMLElement {
+  static get observedAttributes() {
+    return ['type', 'placeholder', 'required', 'value'];
+  }
+
+  connectedCallback() {
+    this.render();
+    this.setupValidation();
+  }
+
+  render() {
+    const type = this.getAttribute('type') || 'text';
+    const placeholder = this.getAttribute('placeholder') || '';
+    const required = this.getAttribute('required') !== null;
+    const value = this.getAttribute('value') || '';
+    
+    this.innerHTML = `
+      <input 
+        type="${type}" 
+        placeholder="${placeholder}" 
+        value="${value}"
+        ${required ? 'required' : ''}
+        style="
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          font-size: 16px;
+          transition: border-color 0.2s ease;
+        "
+      />
+    `;
+  }
+
+  setupValidation() {
+    const input = this.querySelector('input');
+    input.addEventListener('blur', () => {
+      this.validate();
+    });
+  }
+
+  validate() {
+    const input = this.querySelector('input');
+    const isValid = input.checkValidity();
+    
+    if (isValid) {
+      input.style.borderColor = '#10b981';
+    } else {
+      input.style.borderColor = '#ef4444';
+    }
+  }
+}
+
+customElements.define('input-component', InputComponent);
+
+// Usage
+const input = document.createElement('input-component');
+input.setAttribute('type', 'text');
+input.setAttribute('placeholder', 'Enter your name');
+input.setAttribute('required', '');
+```
+
+### React
 
 ```tsx
 import { Input } from '@your-package/ui'
