@@ -1,0 +1,51 @@
+---
+title: Utilities
+description: Helper functions and utilities
+---
+
+# Utilities
+
+The UI package includes various utility functions to help with common tasks.
+
+## CSS Utilities
+
+Pre-built CSS utility classes for common styling needs.
+
+```css
+/* Spacing utilities */
+.mt-4 { margin-top: 1rem; }
+.p-2 { padding: 0.5rem; }
+
+/* Color utilities */
+.text-primary { color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+```
+
+## JavaScript Utilities
+
+Helper functions for common operations.
+
+```tsx
+import { cn, formatDate, debounce } from '@your-package/ui'
+
+// Class name utility
+const className = cn('base-class', condition && 'conditional-class')
+
+// Date formatting
+const formatted = formatDate(new Date(), 'MM/DD/YYYY')
+
+// Debounced function
+const debouncedSearch = debounce(searchFunction, 300)
+```
+
+## TypeScript Types
+
+Type definitions for better development experience.
+
+```tsx
+import type { ComponentProps, ThemeConfig } from '@your-package/ui'
+
+type ButtonProps = ComponentProps<'button'> & {
+  variant?: 'primary' | 'secondary'
+}
+```

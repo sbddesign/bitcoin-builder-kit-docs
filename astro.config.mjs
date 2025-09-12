@@ -17,8 +17,18 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Packages',
+					items: [
+						{
+							label: 'UI',
+							items: [
+								{ label: 'Overview', slug: 'packages/ui' },
+								{ label: 'Components', slug: 'packages/ui/components' },
+								{ label: 'Themes', slug: 'packages/ui/themes' },
+								{ label: 'Utilities', slug: 'packages/ui/utilities' },
+							],
+						},
+					],
 				},
 			],
 		}),
