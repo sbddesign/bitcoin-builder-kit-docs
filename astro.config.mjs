@@ -8,6 +8,22 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			customCss: ['./src/styles/global.css'],
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						type: 'module'
+					},
+					content: `
+						// Load web components globally
+						const buttonScript = document.createElement('script');
+						buttonScript.type = 'module';
+						buttonScript.src = 'https://esm.sh/@sbddesign/bui-ui/button.js';
+						document.head.appendChild(buttonScript);
+					`
+				}
+			],
 			sidebar: [
 				{
 					label: 'Guides',

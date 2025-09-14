@@ -1,0 +1,23 @@
+/* Global styles for Bitcoin UI components */
+
+/* Import the tokens CSS from the local package */
+@import 'https://unpkg.com/@sbddesign/bui-tokens@0.0.2/dist/variables.css';
+
+/* Set up the theme for web components */
+:root {
+  --bui-theme: bitcoindesign;
+  --bui-mode: dark;
+}
+
+/* Ensure web components are properly styled */
+bui-button {
+  display: inline-block;
+}
+
+/* Additional global styles if needed */
+body {
+  /* Ensure proper theming context */
+  color-scheme: dark;
+}
+
+/* Web components will be loaded via script tag */

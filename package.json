@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.35.2",
+    "@sbddesign/bui-tokens": "^0.0.2",
+    "@sbddesign/bui-ui": "^0.0.2",
     "astro": "^5.6.1",
     "sharp": "^0.34.2"
   }
