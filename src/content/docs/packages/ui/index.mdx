@@ -3,16 +3,71 @@ title: UI Package Overview
 description: Overview of the UI package components and utilities
 ---
 
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
 # UI Package
 
-Welcome to the UI package documentation. This package provides a comprehensive set of components, themes, and utilities for building consistent user interfaces.
+The Bitcoin Builder Kit UI package provides a UI system for building consistent looking UIs for your bitcoin products. While some components are bitcoin-specific, some are more generic and applicable to a wide variety of applications.
 
-## What's Included
-
-- **Components** - Reusable UI components
-- **Themes** - Pre-built design themes
-- **Utilities** - Helper functions and styles
+Th UI package uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components), which should be compatible with most modern web frameworks. However, there are also React-wrapped components for React projects.
 
 ## Getting Started
 
-To get started with the UI package, check out the [Components](/packages/ui/components) section for available components.
+First install the UI package:
+
+```bash
+pnpm add @sbddesign/bui-ui
+```
+
+Next, setup the appropriate theming in your project. You will do this by applying a `data-theme` and `data-mode` attribute in your HTML.
+
+The `data-mode` can be `light` or `dark`. The `data-theme` can be `bitcoindesign` or `conduit`. Learn more about themes in [Tokens](/packages/tokens/).
+
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- head content -->
+  </head>
+  <body data-theme="bitcoindesign" data-mode="light">
+    <!-- your app goes here -->
+  </body>
+</html>
+```
+
+Import the CSS so that the componenets have appropriate styling. Typically, you will do this only once, at a higher level part of your app (e.g. `main.js`, `App.tsx`, etc.)
+
+```
+import '@sbddesign/bui-ui/tokens.css'
+```
+
+ Next, import a component to use in your app.
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/button.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```javascript
+    import { BuiButtonReact as BuiButton } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+Finally, display the component in your app.
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-button label="Receive Bitcoin"></bui-button>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiButton label="Receive Bitcoin" />
+    ```
+    </TabItem>
+</Tabs>
