@@ -5,7 +5,6 @@ description: The Amount Option Tile gives a payment amount as a selectable optio
 
 import  { Tabs, TabItem } from '@astrojs/starlight/components';
 
-
 ## Example
 
 <div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); display: flex; flex-direction: row; gap: 8px;" data-theme="conduit" data-mode="dark">
@@ -74,4 +73,42 @@ import  { Tabs, TabItem } from '@astrojs/starlight/components';
     </TabItem>
 </Tabs>
 
+## Properties
 
+All properties and attributes are reflected.
+
+| Property | Attribute | Type | Required | Description |
+|----------|-----------|------|----------|-------------|
+| `emoji` | `emoji` | string | No | Emoji to display on the tile |
+| `message` | `message` | string | No | Message text to display |
+| `showEmoji` | `show-emoji` | boolean | No | Whether to show the emoji |
+| `showMessage` | `show-message` | boolean | No | Whether to show the message |
+| `showSecondaryCurrency` | `show-secondary-currency` | boolean | No | Whether to show secondary currency |
+| `bitcoinFirst` | `bitcoin-first` | boolean | No | Display Bitcoin amount first |
+| `custom` | `custom` | boolean | No | Whether this is a custom amount |
+| `amountDefined` | `amount-defined` | boolean | No | Whether amount is defined |
+| `selected` | `selected` | boolean | No | Whether the tile is selected |
+| `primaryAmount` | `primary-amount` | number | No | Primary amount value |
+| `primarySymbol` | `primary-symbol` | string | No | Symbol for primary currency |
+| `secondaryAmount` | `secondary-amount` | number | No | Secondary amount value |
+| `secondarySymbol` | `secondary-symbol` | string | No | Symbol for secondary currency |
+| `showEstimate` | `show-estimate` | boolean | No | Whether to show estimate text |
+| `primaryTextSize` | `primary-text-size` | string | No | Size of primary text (base, lg, xl, etc.) |
+| `secondaryTextSize` | `secondary-text-size` | string | No | Size of secondary text (base, lg, xl, etc.) |
+
+### Events
+
+The component emits a `click` event with the following detail structure:
+
+```typescript
+interface AmountTileClickDetail {
+  emoji: string;
+  message: string;
+  primaryAmount: number;
+  primarySymbol: string;
+  secondaryAmount: number;
+  secondarySymbol: string;
+  custom: boolean;
+  selected: boolean;
+}
+```
