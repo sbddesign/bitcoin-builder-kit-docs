@@ -16,11 +16,11 @@ export default defineConfig({
 						type: 'module'
 					},
 					content: `
-						// Load web components globally
-						const buttonScript = document.createElement('script');
-						buttonScript.type = 'module';
-						buttonScript.src = 'https://esm.sh/@sbddesign/bui-ui/button.js';
-						document.head.appendChild(buttonScript);
+						// Load UI web components globally
+						const uiScript = document.createElement('script');
+						uiScript.type = 'module';
+						uiScript.src = 'https://esm.sh/@sbddesign/bui-ui/';
+						document.head.appendChild(uiScript);
 					`
 				}
 			],
