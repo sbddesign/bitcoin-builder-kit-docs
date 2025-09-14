@@ -48,6 +48,8 @@ export default defineConfig({
 							items: [
 								{ label: 'Overview', slug: 'packages/ui' },
 								{ label: 'Amount Option Tile', slug: 'packages/ui/amount-option-tile' },
+								{ label: 'Avatar', slug: 'packages/ui/avatar' },
+								{ label: 'Button', slug: 'packages/ui/button' },
 								{ label: 'Components', slug: 'packages/ui/components' },
 								{ label: 'Themes', slug: 'packages/ui/themes' },
 								{ label: 'Utilities', slug: 'packages/ui/utilities' },
