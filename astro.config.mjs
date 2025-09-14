@@ -52,6 +52,7 @@ export default defineConfig({
 								{ label: 'Bitcoin QR Display', slug: 'packages/ui/bitcoin-qr-display' },
 								{ label: 'Bitcoin Value', slug: 'packages/ui/bitcoin-value' },
 								{ label: 'Button', slug: 'packages/ui/button' },
+								{ label: 'Money Value', slug: 'packages/ui/money-value' },
 							],
 						},
 						{

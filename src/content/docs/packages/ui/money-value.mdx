@@ -1,0 +1,95 @@
+---
+title: Money Value
+description: A way to format and display money values.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); display: flex; flex-direction: row; gap: 8px;" data-theme="conduit" data-mode="dark">
+    <bui-money-value amount="100" symbol="$"></bui-money-value>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/money-value.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiMoneyValueReact as BuiMoneyValue } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-money-value amount="100" symbol="$"></bui-money-value>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiMoneyValue amount="1000" symbol="$"></BuiMoneyValue>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `symbolPosition` | `symbol-position` | string | No | Yes | Symbol position: "left", "right" |
+| `symbol` | `symbol` | string | No | Yes | Currency symbol to display |
+| `amount` | `amount` | number | No | Yes | Money amount to display |
+| `truncation` | `truncation` | boolean | No | Yes | Whether to truncate large numbers |
+| `size` | `size` | string | No | Yes | Money size: "small", "default", "large", "xlarge" |
+| `satcomma` | `satcomma` | boolean | No | Yes | Whether to use satcomma formatting |
+| `showEstimate` | `show-estimate` | boolean | No | Yes | Whether to show estimate text |
+| `textSize` | `text-size` | string | No | Yes | Text size: "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl" |
+
+### Valid Values
+
+#### Symbol Positions
+- `left` - Symbol appears before the amount
+- `right` - Symbol appears after the amount
+
+#### Money Sizes
+- `small` - Small money display
+- `default` - Standard money display
+- `large` - Large money display
+- `xlarge` - Extra large money display
+
+#### Text Sizes
+- `base` - Base text size
+- `lg` - Large text
+- `xl` - Extra large text
+- `2xl` - 2x large text
+- `3xl` - 3x large text
+- `4xl` - 4x large text
+- `5xl` - 5x large text
+- `6xl` - 6x large text
+- `7xl` - 7x large text
+- `8xl` - 8x large text
+- `9xl` - 9x large text
+
+### Behavior
+
+- **Generic Money Display**: This component is designed for displaying any currency, not just Bitcoin
+- **Symbol Customization**: The `symbol` property allows you to set any currency symbol (e.g., "$", "€", "¥", "₿")
+- **Truncation**: When `truncation` is true, large numbers are shortened (e.g., 1,000,000 → 1M)
+- **Satcomma Formatting**: When `satcomma` is true, uses satcomma notation for better readability
+- **Symbol Positioning**: Controls whether the currency symbol appears before or after the amount
+- **Size Responsiveness**: The `size` property controls the overall visual size of the money display
+- **Text Scaling**: The `textSize` property allows fine-grained control over text size
+- **Estimate Display**: The `showEstimate` property can display additional context text
+
+### Events
+
+The money value component does not emit custom events. It behaves as a standard HTML element for displaying monetary amounts.
