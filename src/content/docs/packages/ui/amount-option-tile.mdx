@@ -1,0 +1,77 @@
+---
+title: Amount Option Tile
+description: The Amount Option Tile gives a payment amount as a selectable option. Usable for tipping, donations, and ecommerce UIs.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+## Example
+
+<div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); display: flex; flex-direction: row; gap: 8px;" data-theme="conduit" data-mode="dark">
+  <bui-amount-option-tile
+    primary-amount="100"
+    secondary-amount="0.10"
+    secondary-symbol="$"
+    bitcoin-first="true"
+    emoji="🙏"
+    message="Thank you"
+  ></bui-amount-option-tile>
+
+<br />
+
+<bui-amount-option-tile
+    primary-amount="1000"
+    secondary-amount="1.00"
+    secondary-symbol="$"
+    bitcoin-first="true"
+    emoji="🧡"
+    message="Feel the love"
+></bui-amount-option-tile>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/amount-option-tile.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiAmountOptionTileReact as BuiAmountOptionTile } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-amount-option-tile
+        primary-amount="100"
+        secondary-amount="0.10"
+        secondary-symbol="$"
+        bitcoin-first="true"
+        emoji="🙏"
+        message="Thank you"
+    ></bui-amount-option-tile>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiAmountOptionTile
+        primaryAmount="100"
+        secondaryAmount="0.10"
+        secondaryAymbol="$"
+        bitcoinFirst="true"
+        emoji="🙏"
+        message="Thank you"
+    ></BuiAmountOptionTile>
+    ```
+    </TabItem>
+</Tabs>
+
+
