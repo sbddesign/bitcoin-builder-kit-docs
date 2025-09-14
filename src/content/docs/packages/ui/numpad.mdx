@@ -1,0 +1,66 @@
+---
+title: NumPad
+description: A responsive numpad component with number buttons and backspace functionality. Events bubble up naturally from individual buttons - listen for "numpad-click" events on the numpad or individual buttons.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div class="bui-component-group" data-theme="conduit" data-mode="dark">
+    <bui-numpad></bui-numpad>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/numpad.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiNumpadReact as BuiNumpad } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-numpad></bui-numpad>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiNumpad></BuiNumpad>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `disabled` | `disabled` | boolean | No | Yes | Whether the numpad is disabled |
+
+### Behavior
+
+- **Number Input**: The numpad provides a 3x4 grid of number buttons (0-9) plus backspace
+- **Disabled State**: When `disabled` is true, all buttons become non-interactive
+- **Button Layout**: 
+  - Numbers 1-9 in a 3x3 grid
+  - 0 and backspace in the bottom row
+  - Backspace button for deleting input
+- **Event Handling**: Each button emits click events with the corresponding value
+- **Accessibility**: Proper keyboard navigation and screen reader support
+
+### Events
+
+The numpad component emits click events for each button:
+- **Number buttons** (0-9): Emit `click` event with the number value
+- **Backspace button**: Emits `click` event for deletion action
+- **Disabled state**: No events are emitted when disabled
