@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Bitcoin Builder Kit',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			customCss: ['./src/styles/global.css'],
 			head: [
@@ -49,10 +49,8 @@ export default defineConfig({
 								{ label: 'Overview', slug: 'packages/ui' },
 								{ label: 'Amount Option Tile', slug: 'packages/ui/amount-option-tile' },
 								{ label: 'Avatar', slug: 'packages/ui/avatar' },
+								{ label: 'Bitcoin QR Display', slug: 'packages/ui/bitcoin-qr-display' },
 								{ label: 'Button', slug: 'packages/ui/button' },
-								{ label: 'Components', slug: 'packages/ui/components' },
-								{ label: 'Themes', slug: 'packages/ui/themes' },
-								{ label: 'Utilities', slug: 'packages/ui/utilities' },
 							],
 						},
 						{

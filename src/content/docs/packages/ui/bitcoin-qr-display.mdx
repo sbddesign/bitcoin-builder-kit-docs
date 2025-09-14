@@ -1,0 +1,99 @@
+---
+title: Bitcoin QR Display
+description: A component for displaying QR codes for BIP21 URIs, lightning invoices, and on-chain addresses.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+import { BuiBitcoinQrDisplayReact } from '@sbddesign/bui-ui/react'
+
+## Example
+
+<div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); text-align: center;" data-mode="dark" data-theme="conduit">
+    <bui-bitcoin-qr-display
+        address="BC1QYLH3U67J673H6Y6ALV70M0PL2YZ53TZHVXGG7U"
+        lightning="lnbc10u1pn9eh8vpp5k7q2dz6c4w0d3p0d8n2k3z6a7n8r7c9e9e0t8s8y5j6lm3vwm3dqzsdz5xysxxmmnwssx7un9de6xzetjv4kxzcm9d5c8g6t5de5k2mr0d5c8g6t5de5k2mr0da5gzqzjccqzpgxqyz5vqsp5usyc4lk9chsfp53kvcnvq456ganh60d89reykdngsmtj6yw3nhvq9qyysgqc8u6w"
+        selector="toggle"
+    ></bui-bitcoin-qr-display>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/bitcoin-qr-display.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiBitcoinQrDisplayReact as BuiBitcoinQrDisplay } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-bitcoin-qr-display
+        address="BC1QYLH3U67J673H6Y6ALV70M0PL2YZ53TZHVXGG7U"
+        lightning="lnbc10u1pn9eh8vpp5k7q2dz6c4w0d3p0d8n2k3z6a7n8r7c9e9e0t8s8y5j6lm3vwm3dqzsdz5xysxxmmnwssx7un9de6xzetjv4kxzcm9d5c8g6t5de5k2mr0d5c8g6t5de5k2mr0da5gzqzjccqzpgxqyz5vqsp5usyc4lk9chsfp53kvcnvq456ganh60d89reykdngsmtj6yw3nhvq9qyysgqc8u6w"
+        selector="toggle"
+    ></bui-bitcoin-qr-display>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiBitcoinQrDisplay
+        address="BC1QYLH3U67J673H6Y6ALV70M0PL2YZ53TZHVXGG7U"
+        lightning="lnbc10u1pn9eh8vpp5k7q2dz6c4w0d3p0d8n2k3z6a7n8r7c9e9e0t8s8y5j6lm3vwm3dqzsdz5xysxxmmnwssx7un9de6xzetjv4kxzcm9d5c8g6t5de5k2mr0d5c8g6t5de5k2mr0da5gzqzjccqzpgxqyz5vqsp5usyc4lk9chsfp53kvcnvq456ganh60d89reykdngsmtj6yw3nhvq9qyysgqc8u6w"
+        selector="toggle"
+    ></BuiBitcoinQrDisplay>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `address` | `address` | string | No | No | Bitcoin on-chain address |
+| `lightning` | `lightning` | string | No | No | Lightning network invoice |
+| `option` | `option` | string | No | Yes | QR option to display: "unified", "lightning", "onchain" |
+| `selector` | `selector` | string | No | Yes | Selector type: "dots", "toggle" |
+| `size` | `size` | number | No | No | QR code size in pixels |
+| `showImage` | `show-image` | boolean | No | Yes | Whether to show an image overlay on the QR code |
+| `dotType` | `dot-type` | string | No | Yes | Style of dots in the QR code |
+| `dotColor` | `dot-color` | string | No | Yes | Color of dots in the QR code |
+| `unifiedImage` | `unified-image` | string | No | No | Image URL for unified QR code |
+| `lightningImage` | `lightning-image` | string | No | No | Image URL for lightning QR code |
+| `onchainImage` | `onchain-image` | string | No | No | Image URL for on-chain QR code |
+| `copyOnTap` | `copy-on-tap` | boolean | No | Yes | Whether to copy QR data when tapped |
+| `placeholder` | `placeholder` | boolean | No | Yes | Whether to show placeholder state |
+| `error` | `error` | boolean | No | Yes | Whether to show error state |
+| `errorMessage` | `error-message` | string | No | No | Error message to display |
+| `complete` | `complete` | boolean | No | Yes | Whether the payment is complete |
+
+### Valid Values
+
+#### QR Options
+- `unified` - BIP21 URI with both address and lightning
+- `lightning` - Lightning network invoice only
+- `onchain` - Bitcoin address only
+
+#### Selector Types
+- `dots` - Dot-based selector for switching between options
+- `toggle` - Toggle button for switching between options
+
+### Behavior
+
+- **Automatic Detection**: If both `address` and `lightning` are provided, the component automatically enables the unified option
+- **Selector Display**: The selector only appears when multiple options are available
+- **QR Generation**: QR codes are generated dynamically based on the selected option
+- **Image Overlay**: Custom images can be overlaid on QR codes for branding
+- **Copy Functionality**: When `copyOnTap` is enabled, tapping the QR code copies the relevant data
+
+### Events
+
+The component emits a `click` event when the QR code is tapped (if `copyOnTap` is enabled).
