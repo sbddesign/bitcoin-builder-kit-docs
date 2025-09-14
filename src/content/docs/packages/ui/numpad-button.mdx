@@ -1,0 +1,80 @@
+---
+title: NumPad Button
+description: A responsive numpad component with number buttons and backspace functionality. Events bubble up naturally from individual buttons - listen for "numpad-click" events on the numpad or individual buttons.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div class="bui-component-group" data-theme="conduit" data-mode="dark">
+    <bui-numpad-button number="2"></bui-numpad-button>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/numpad-button.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiNumpadButtonReact as BuiNumpadButton } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-numpad-button number="2"></bui-numpad-button>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiNumpadButton number="2"></BuiNumpadButton>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `number` | `number` | string | No | No | Number value displayed on the button |
+| `content` | `content` | string | No | No | Content type: "number", "icon" |
+| `disabled` | `disabled` | boolean | No | Yes | Whether the button is disabled |
+| `ariaLabel` | `aria-label` | string | No | Yes | Accessibility label for screen readers |
+
+### Valid Values
+
+#### Content Types
+- `number` - Display a number on the button
+- `icon` - Display an icon on the button
+
+### Behavior
+
+- **Number Display**: The `number` property controls what number is displayed on the button
+- **Content Type**: The `content` property determines whether to show a number or an icon
+- **Disabled State**: When `disabled` is true, the button becomes non-interactive
+- **Accessibility**: The `ariaLabel` property provides screen reader support
+- **Click Handling**: Each button handles its own click events and emits custom events
+
+### Events
+
+The numpad button component emits a `click` event with the following detail structure:
+
+```typescript
+interface NumPadClickDetail {
+  number: string;
+  content: 'number' | 'icon';
+}
+```
+
+- **Click Event**: Emitted when the button is clicked (unless disabled)
+- **Event Detail**: Contains the number value and content type
+- **Disabled State**: No events are emitted when disabled
