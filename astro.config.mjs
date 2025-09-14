@@ -53,6 +53,7 @@ export default defineConfig({
 								{ label: 'Bitcoin Value', slug: 'packages/ui/bitcoin-value' },
 								{ label: 'Button', slug: 'packages/ui/button' },
 								{ label: 'Button Cluster', slug: 'packages/ui/button-cluster' },
+								{ label: 'Input', slug: 'packages/ui/input' },
 								{ label: 'Money Value', slug: 'packages/ui/money-value' },
 							],
 						},

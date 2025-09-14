@@ -1,0 +1,86 @@
+---
+title: Input
+description: An input for text.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div class="bui-component-group" data-theme="conduit" data-mode="dark">
+    <bui-input label="Send Bitcoin To" placeholder="₿stephen@twelve.cash"></bui-input>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/input.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiInputReact as BuiInput } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-input label="Send Bitcoin To" placeholder="₿stephen@twelve.cash"></bui-input>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiInput label="Send Bitcoin To" placeholder="₿stephen@twelve.cash"></BuiInput>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `mood` | `mood` | string | No | Yes | Input mood: "neutral", "caution", "danger", "success" |
+| `size` | `size` | string | No | Yes | Input size: "large", "small" |
+| `label` | `label` | string | No | Yes | Label text for the input |
+| `value` | `value` | string | No | Yes | Input value |
+| `placeholder` | `placeholder` | string | No | Yes | Placeholder text |
+| `showLabel` | `show-label` | boolean | No | Yes | Whether to show the label |
+| `showIconLeft` | `show-icon-left` | boolean | No | Yes | Whether to show left icon |
+| `showIconRight` | `show-icon-right` | boolean | No | Yes | Whether to show right icon |
+| `iconRightAction` | `icon-right-action` | string | No | No | Action for right icon click |
+
+### Valid Values
+
+#### Input Moods
+- `neutral` - Default neutral appearance
+- `caution` - Warning/caution styling
+- `danger` - Error/danger styling
+- `success` - Success/positive styling
+
+#### Input Sizes
+- `large` - Large input size
+- `small` - Small input size
+
+### Behavior
+
+- **Mood Styling**: The `mood` property controls the visual state and styling of the input
+- **Icon Support**: Both left and right icons can be displayed independently
+- **Label Display**: The label can be shown or hidden with `showLabel`
+- **Value Binding**: The `value` property is two-way bound with the input content
+- **Placeholder Text**: Provides helpful hints when the input is empty
+- **Right Icon Action**: The right icon can have a click action defined
+
+### Events
+
+The input component emits standard input events:
+- `input` - When the input value changes
+- `change` - When the input value changes and loses focus
+- `focus` - When the input gains focus
+- `blur` - When the input loses focus
+- `click` - When the right icon is clicked (if `iconRightAction` is defined)

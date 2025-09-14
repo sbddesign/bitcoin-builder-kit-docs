@@ -20,6 +20,14 @@ body {
   color-scheme: dark;
 }
 
+.bui-component-group {
+  background: var(--background);
+  border: 1px solid var(--system-divider);
+  border-radius: var(--size-2);
+  margin: 2rem 0;
+  padding: 1rem
+}
+
 .bui-component-group * + * {
   margin-top: 0;
 }
