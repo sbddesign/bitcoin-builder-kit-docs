@@ -50,6 +50,7 @@ export default defineConfig({
 								{ label: 'Amount Option Tile', slug: 'packages/ui/amount-option-tile' },
 								{ label: 'Avatar', slug: 'packages/ui/avatar' },
 								{ label: 'Bitcoin QR Display', slug: 'packages/ui/bitcoin-qr-display' },
+								{ label: 'Bitcoin Value', slug: 'packages/ui/bitcoin-value' },
 								{ label: 'Button', slug: 'packages/ui/button' },
 							],
 						},
