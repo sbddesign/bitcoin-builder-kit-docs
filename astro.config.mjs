@@ -66,18 +66,12 @@ export default defineConfig({
 							label: 'Tokens',
 							items: [
 								{ label: 'Overview', slug: 'packages/tokens' },
-								{ label: 'Colors', slug: 'packages/tokens/colors' },
-								{ label: 'Typography', slug: 'packages/tokens/typography' },
-								{ label: 'Spacing', slug: 'packages/tokens/spacing' },
 							],
 						},
 						{
 							label: 'Icons',
 							items: [
 								{ label: 'Overview', slug: 'packages/icons' },
-								{ label: 'Icon Library', slug: 'packages/icons/library' },
-								{ label: 'Usage', slug: 'packages/icons/usage' },
-								{ label: 'Custom Icons', slug: 'packages/icons/custom' },
 							],
 						},
 					],
