@@ -1,0 +1,128 @@
+---
+title: Spacing Tokens
+description: Consistent spacing scale and layout tokens
+---
+
+# Spacing Tokens
+
+Spacing tokens provide a consistent scale for margins, padding, and layout spacing throughout the design system.
+
+## Spacing Scale
+
+### JavaScript (Web Components)
+
+```javascript
+// Create a card component with consistent spacing
+class CardComponent extends HTMLElement {
+  connectedCallback() {
+    this.style.cssText = `
+      padding: var(--token-spacing-lg);
+      margin: var(--token-spacing-md);
+      border-radius: var(--token-radius-md);
+      box-shadow: var(--token-shadow-sm);
+    `;
+    
+    this.innerHTML = `
+      <div style="margin-bottom: var(--token-spacing-sm);">
+        <h3 style="margin: 0 0 var(--token-spacing-xs) 0;">Card Title</h3>
+        <p style="margin: 0;">Card content with consistent spacing</p>
+      </div>
+    `;
+  }
+}
+
+customElements.define('card-component', CardComponent);
+
+// Apply spacing to existing elements
+const container = document.querySelector('.container');
+container.style.setProperty('--gap', 'var(--token-spacing-lg)');
+container.style.display = 'grid';
+container.style.gap = 'var(--gap)';
+```
+
+### React
+
+```tsx
+import { tokens } from '@your-package/tokens';
+
+interface CardProps {
+  title: string;
+  children: React.ReactNode;
+  padding?: keyof typeof tokens.spacing;
+}
+
+function Card({ title, children, padding = 'lg' }: CardProps) {
+  const cardStyles = {
+    padding: tokens.spacing[padding],
+    margin: tokens.spacing.md,
+    borderRadius: tokens.radius.md,
+    boxShadow: tokens.shadow.sm,
+    backgroundColor: tokens.colors.surface,
+  };
+
+  const headerStyles = {
+    marginBottom: tokens.spacing.sm,
+    paddingBottom: tokens.spacing.sm,
+    borderBottom: `1px solid ${tokens.colors.border}`,
+  };
+
+  const titleStyles = {
+    margin: 0,
+    marginBottom: tokens.spacing.xs,
+    fontSize: tokens.typography.fontSize.lg,
+    fontWeight: tokens.typography.fontWeight.semibold,
+  };
+
+  return (
+    <div style={cardStyles}>
+      <div style={headerStyles}>
+        <h3 style={titleStyles}>{title}</h3>
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+// Grid layout with consistent spacing
+function Grid({ children }: { children: React.ReactNode }) {
+  return (
+    <div 
+      style={{
+        display: 'grid',
+        gap: tokens.spacing.lg,
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+```
+
+## Spacing Values
+
+Our spacing scale is based on a consistent multiplier system.
+
+```css
+/* Spacing Scale */
+:root {
+  --token-spacing-xs: 0.25rem;   /* 4px */
+  --token-spacing-sm: 0.5rem;    /* 8px */
+  --token-spacing-md: 1rem;      /* 16px */
+  --token-spacing-lg: 1.5rem;    /* 24px */
+  --token-spacing-xl: 2rem;      /* 32px */
+  --token-spacing-2xl: 3rem;     /* 48px */
+  --token-spacing-3xl: 4rem;     /* 64px */
+}
+```
+
+## Layout Tokens
+
+Layout-specific spacing tokens for common patterns.
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--token-spacing-section` | `4rem` | Section spacing |
+| `--token-spacing-component` | `1.5rem` | Component spacing |
+| `--token-spacing-element` | `0.5rem` | Element spacing |
+| `--token-spacing-text` | `0.25rem` | Text line spacing |

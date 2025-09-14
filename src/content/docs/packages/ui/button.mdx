@@ -1,0 +1,90 @@
+---
+title: Button
+description: A flexible button component.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); display: flex; flex-direction: row; gap: 8px;" data-theme="conduit" data-mode="dark">
+    <bui-button label="Receive Bitcoin"></bui-button>
+      
+    <br />
+
+    <bui-button label="Send Bitcoin" style-type="outline"></bui-button>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/button.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiButtonReact as BuiButton } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-button label="Receive Bitcoin"></bui-button>
+    <bui-button label="Send Bitcoin" style-type="outline"></bui-button>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiButton label="Receive Bitcoin" />
+    <BuiButton label="Send Bitcoin" styleType="outline" />
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `content` | `content` | string | No | No | Content type: "label", "icon", "label+icon", "icon+label" |
+| `styleType` | `style-type` | string | No | No | Button style: "filled", "outline", "free" |
+| `size` | `size` | string | No | No | Button size: "default", "small", "large" |
+| `disabled` | `disabled` | boolean | No | Yes | Whether the button is disabled |
+| `label` | `label` | string | No | No | Text label for the button |
+| `cluster` | `cluster` | string | No | No | Cluster position: "top", "bottom", "left", "right", "middle-horizontal", "middle-vertical" |
+| `wide` | `wide` | boolean | No | Yes | Whether the button should take full width |
+
+### Valid Values
+
+#### Content Types
+- `label` - Text only
+- `icon` - Icon only  
+- `label+icon` - Text followed by icon
+- `icon+label` - Icon followed by text
+
+#### Style Types
+- `filled` - Solid background button
+- `outline` - Outlined button
+- `free` - Minimal styling
+
+#### Sizes
+- `default` - Standard size
+- `small` - Compact size
+- `large` - Larger size
+
+#### Cluster Positions
+- `top` - Top of a group
+- `bottom` - Bottom of a group
+- `left` - Left side of a group
+- `right` - Right side of a group
+- `middle-horizontal` - Middle of horizontal group
+- `middle-vertical` - Middle of vertical group
+
+### Events
+
+The component emits a standard `click` event when clicked (unless disabled).

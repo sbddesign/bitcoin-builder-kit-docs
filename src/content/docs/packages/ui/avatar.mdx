@@ -1,0 +1,108 @@
+---
+title: Avatar
+description: The Avatar provides a way to indicate a user or contact in the UI.
+---
+import catImage from '../../../../assets/Cat.png';
+import catImage2x from '../../../../assets/Cat@2x.png';
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div style="margin: 2rem 0; padding: 1rem; border: 1px solid var(--system-divider); border-radius: var(--size-2); background: var(--background); display: flex; flex-direction: row; gap: 8px;" data-theme="conduit" data-mode="dark">
+  <div style="width: 64px; height: 64px;">
+    <bui-avatar text="Alice" size="large"></bui-avatar>
+  </div>
+
+  <br />
+
+  <div style="width: 64px; height: 64px;">
+    <bui-avatar text="₿etty" size="large" show-initial></bui-avatar>
+  </div>
+
+  <br />
+
+  <div style="width: 64px; height: 64px;">
+    <bui-avatar text="Cat" image-url={catImage.src} image-url-2x={catImage2x.src}></bui-avatar>
+  </div>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/avatar.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiAvatarReact as BuiAvatar } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+The avatar will expand to fill the available width, so wrap it in a container sized for your needs.
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <div style="width: 64px; height: 64px;">
+      <bui-avatar text="Alice" size="large"></bui-avatar>
+    </div>
+
+    <div style="width: 64px; height: 64px;">
+      <bui-avatar text="₿etty" size="large" show-initial></bui-avatar>
+    </div>
+
+    <div style="width: 64px; height: 64px;">
+      <bui-avatar text="Cat" image-url={catImage.src} image-url-2x={catImage2x.src}></bui-avatar>
+    </div>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <div style="width: 64px; height: 64px;">
+      <BuiAvatar text="Alice" size="large"></BuiAvatar>
+    </div>
+
+    <div style="width: 64px; height: 64px;">
+      <BuiAvatar text="₿etty" size="large" showInitial></BuiAvatar>
+    </div>
+
+    <div style="width: 64px; height: 64px;">
+      <BuiAvatar text="Cat" imageUrl={catImage.src} imageUrl2x={catImage2x.src}></BuiAvatar>
+    </div>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `imageUrl` | `image-url` | string | No | No | URL of the avatar image |
+| `imageUrl2x` | `image-url-2x` | string | No | No | URL of the high-resolution (2x) avatar image |
+| `text` | `text` | string | No | No | Text to display (used for initials or fallback) |
+| `showInitial` | `show-initial` | boolean | No | Yes | Whether to show the first character of text as initial |
+| `size` | `size` | string | No | Yes | Avatar size: "small", "medium", "large" |
+
+### Valid Values
+
+#### Sizes
+- `small` - Small avatar
+- `medium` - Medium avatar (default)
+- `large` - Large avatar
+
+### Behavior
+
+- **Image Priority**: If `imageUrl` is provided, the image will be displayed
+- **Fallback**: If no image is provided, the component will show:
+  - The first character of `text` if `showInitial` is true
+  - A generated gradient background based on the `text` value
+- **High Resolution**: `imageUrl2x` is used for high-DPI displays when available
+
+### Events
+
+The avatar component does not emit custom events. It behaves as a standard HTML element.
