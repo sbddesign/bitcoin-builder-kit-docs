@@ -28,11 +28,11 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Getting Started', slug: 'guides' },
 						{
 							label: 'Bitcoin Tip Jar',
 							items: [
-								{ label: 'Getting Started', slug: 'guides/bitcoin-tip-jar/getting-started' },
+								{ label: 'Bitcoin Tip Jar', slug: 'guides/bitcoin-tip-jar/getting-started' },
 								{ label: 'Configuration', slug: 'guides/bitcoin-tip-jar/configuration' },
 								{ label: 'Customization', slug: 'guides/bitcoin-tip-jar/customization' },
 								{ label: 'Advanced Usage', slug: 'guides/bitcoin-tip-jar/advanced-usage' },
