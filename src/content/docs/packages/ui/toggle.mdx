@@ -1,0 +1,72 @@
+---
+title: Toggle
+description: A toggle switch component that can be used to enable/disable features or settings. Supports two sizes and can be disabled.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div class="bui-component-group" style="display: flex; flex-direction: row; gap: 12px;" data-theme="conduit" data-mode="dark">
+    <bui-toggle></bui-toggle>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/toggle.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiToggleReact as BuiToggle } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-toggle></bui-toggle>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiToggle></BuiToggle>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `active` | `active` | boolean | No | Yes | Whether the toggle is active/on |
+| `size` | `size` | string | No | No | Toggle size: "big", "small" |
+| `disabled` | `disabled` | boolean | No | Yes | Whether the toggle is disabled |
+
+### Valid Values
+
+#### Toggle Sizes
+- `big` - Large toggle size
+- `small` - Small toggle size
+
+### Behavior
+
+- **Active State**: The `active` property controls whether the toggle is on or off
+- **Size Control**: The `size` property determines the visual size of the toggle
+- **Disabled State**: When `disabled` is true, the toggle becomes non-interactive
+- **State Management**: The `active` and `disabled` properties are reflected for reactive updates
+- **User Interaction**: Users can click to toggle between active/inactive states
+- **Validation**: The component includes validation rules for proper state management
+
+### Events
+
+The toggle component emits a `click` event when toggled:
+- **Click Event**: Emitted when the toggle is clicked (unless disabled)
+- **State Change**: The `active` property updates when the toggle is clicked
+- **Disabled State**: No events are emitted when disabled

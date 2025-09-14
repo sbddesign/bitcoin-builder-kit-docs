@@ -58,7 +58,9 @@ export default defineConfig({
 								{ label: 'Money Value', slug: 'packages/ui/money-value' },
 								{ label: 'NumPad', slug: 'packages/ui/numpad' },
 								{ label: 'NumPad Button', slug: 'packages/ui/numpad-button' },
-								{ label: 'Option Dot', slug: 'packages/ui/option-dot' },							],
+								{ label: 'Option Dot', slug: 'packages/ui/option-dot' },
+								{ label: 'Toggle', slug: 'packages/ui/toggle' },
+							],
 						},
 						{
 							label: 'Tokens',
