@@ -20,4 +20,6 @@ body {
   color-scheme: dark;
 }
 
-/* Web components will be loaded via script tag */
+.bui-component-group * + * {
+  margin-top: 0;
+}
