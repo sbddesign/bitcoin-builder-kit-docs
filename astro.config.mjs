@@ -54,6 +54,7 @@ export default defineConfig({
 								{ label: 'Button', slug: 'packages/ui/button' },
 								{ label: 'Button Cluster', slug: 'packages/ui/button-cluster' },
 								{ label: 'Input', slug: 'packages/ui/input' },
+								{ label: 'Message', slug: 'packages/ui/message' },
 								{ label: 'Money Value', slug: 'packages/ui/money-value' },
 							],
 						},

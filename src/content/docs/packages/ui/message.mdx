@@ -1,0 +1,80 @@
+---
+title: Message
+description: A message component that displays information with different mood states. Supports neutral, success, caution, and danger moods with appropriate colors and icons.
+---
+
+import  { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Example
+
+<div class="bui-component-group" style="display: flex; flex-direction: column; gap: 12px;" data-theme="conduit" data-mode="dark">
+    <bui-message mood="success" text="₿1,000 received."></bui-message>
+    <bui-message mood="caution" text="Transaction is pending."></bui-message>
+    <bui-message mood="danger" text="An error occured. Please try again later."></bui-message>
+    <bui-message text="Just an FYI, there can only be 21 million BTC."></bui-message>
+</div>
+
+### Import
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```javascript
+    import '@sbddesign/bui-ui/message.js'
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    import { BuiMessageReact as BuiMessage } from '@sbddesign/bui-ui/react'
+    ```
+    </TabItem>
+</Tabs>
+
+### Usage
+
+<Tabs>
+    <TabItem label="JavaScript">
+    ```html
+    <bui-message mood="success" text="₿1,000 received."></bui-message>
+    <bui-message mood="caution" text="Transaction is pending."></bui-message>
+    <bui-message mood="danger" text="An error occured. Please try again later."></bui-message>
+    <bui-message text="Just an FYI, there can only be 21 million BTC."></bui-message>
+    ```
+    </TabItem>
+     <TabItem label="React">
+    ```jsx
+    <BuiMessage mood="success" text="₿1,000 received."></BuiMessage>
+    <BuiMessage mood="caution" text="Transaction is pending."></BuiMessage>
+    <BuiMessage mood="danger" text="An error occured. Please try again later."></BuiMessage>
+    <BuiMessage text="Just an FYI, there can only be 21 million BTC."></BuiMessage>
+    ```
+    </TabItem>
+</Tabs>
+
+## Properties
+
+| Property | Attribute | Type | Required | Reflected | Description |
+|----------|-----------|------|----------|-----------|-------------|
+| `text` | `text` | string | No | No | Message text content |
+| `mood` | `mood` | string | No | No | Message mood: "neutral", "success", "caution", "danger" |
+| `showIcon` | `show-icon` | boolean | No | Yes | Whether to show an icon |
+| `icon` | `icon` | string | No | No | Icon name or identifier |
+
+### Valid Values
+
+#### Message Moods
+- `neutral` - Default neutral message
+- `success` - Success/positive message
+- `caution` - Warning/caution message
+- `danger` - Error/danger message
+
+### Behavior
+
+- **Mood Styling**: The `mood` property controls the visual appearance and color scheme of the message
+- **Icon Display**: The `showIcon` property controls whether an icon is displayed alongside the text
+- **Custom Icons**: The `icon` property allows you to specify which icon to display
+- **Text Content**: The `text` property contains the main message content
+- **Visual Hierarchy**: Different moods provide clear visual distinction for different message types
+
+### Events
+
+The message component does not emit custom events. It behaves as a standard HTML element for displaying messages.
