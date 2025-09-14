@@ -33,9 +33,6 @@ export default defineConfig({
 							label: 'Bitcoin Tip Jar',
 							items: [
 								{ label: 'Bitcoin Tip Jar', slug: 'guides/bitcoin-tip-jar/getting-started' },
-								{ label: 'Configuration', slug: 'guides/bitcoin-tip-jar/configuration' },
-								{ label: 'Customization', slug: 'guides/bitcoin-tip-jar/customization' },
-								{ label: 'Advanced Usage', slug: 'guides/bitcoin-tip-jar/advanced-usage' },
 							],
 						},
 					],
