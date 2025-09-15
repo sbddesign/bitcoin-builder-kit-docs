@@ -12,11 +12,11 @@ importers:
         specifier: ^0.35.2
         version: 0.35.2(astro@5.13.7(@types/node@24.3.1)(rollup@4.50.1)(typescript@5.9.2))
       '@sbddesign/bui-tokens':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.0.4
+        version: 0.0.4
       '@sbddesign/bui-ui':
-        specifier: ^0.0.3
-        version: 0.0.3(@liquid-js/qrcode-generator@1.1.1)(@types/react@19.1.13)(@xmldom/xmldom@0.9.8)(file-type@19.6.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sharp@0.34.3)
+        specifier: ^0.0.7
+        version: 0.0.7(@liquid-js/qrcode-generator@1.1.1)(@types/react@19.1.13)(@xmldom/xmldom@0.9.8)(file-type@19.6.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sharp@0.34.3)
       astro:
         specifier: ^5.6.1
         version: 5.13.7(@types/node@24.3.1)(rollup@4.50.1)(typescript@5.9.2)
@@ -559,14 +559,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sbddesign/bui-icons@0.0.3':
-    resolution: {integrity: sha512-eYG3WyuS2P6yEjsRchTXNYAywF6Cdc5ebbvoBkbaulciX0GVO/XUHpomZ/SV4Nf4HvmFV4VX7b1/bbFgBM2xXA==}
+  '@sbddesign/bui-icons@0.0.4':
+    resolution: {integrity: sha512-gIN9+H+0eqcN0ZGSGuezgN25ZE4lcbaAOoqv636jjyAmGlAyNY6KXIamjImz7AHrsVGYaJpte7c3xaDaf/jLiA==}
 
-  '@sbddesign/bui-tokens@0.0.3':
-    resolution: {integrity: sha512-kz+4OguUk3AKSpgYWIj7Ve8KluE2BAT6UHqzgClGY5ViFkG7KsGLj3X9YDXDxldt0hjD4xzch07ETuA5ulurYg==}
+  '@sbddesign/bui-tokens@0.0.4':
+    resolution: {integrity: sha512-uBCFZvioSpqkV/BxyKIR+D7ZstL8ybtlla4koXQQN5SiiNnbFaVMKZAD6jRLCROd/7cX7P2FVZzLGJF4tXsW/w==}
 
-  '@sbddesign/bui-ui@0.0.3':
-    resolution: {integrity: sha512-cDz09Zx0j9dHLpTGFip1j7+GyBjzPdKzZrAcFAb1bM/YcSLyj8gktzjUw0Hljszi8HNWtLMrTDIFz8qVmw+8/A==}
+  '@sbddesign/bui-ui@0.0.7':
+    resolution: {integrity: sha512-TNQAtudPePRpKPhDaLQ5ZzB/PzuKfwFyik72BxQGhKfN0aR6EL72ZWtJQjPgN3PCVUlJAvjgY2VN8GrybUe+jQ==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -2400,20 +2400,20 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.50.1':
     optional: true
 
-  '@sbddesign/bui-icons@0.0.3':
+  '@sbddesign/bui-icons@0.0.4':
     dependencies:
       lit: 3.3.1
 
-  '@sbddesign/bui-tokens@0.0.3':
+  '@sbddesign/bui-tokens@0.0.4':
     dependencies:
       culori: 4.0.2
 
-  '@sbddesign/bui-ui@0.0.3(@liquid-js/qrcode-generator@1.1.1)(@types/react@19.1.13)(@xmldom/xmldom@0.9.8)(file-type@19.6.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sharp@0.34.3)':
+  '@sbddesign/bui-ui@0.0.7(@liquid-js/qrcode-generator@1.1.1)(@types/react@19.1.13)(@xmldom/xmldom@0.9.8)(file-type@19.6.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sharp@0.34.3)':
     dependencies:
       '@liquid-js/qr-code-styling': 4.0.8(@liquid-js/qrcode-generator@1.1.1)(@xmldom/xmldom@0.9.8)(file-type@19.6.0)(sharp@0.34.3)
       '@lit/react': 1.0.8(@types/react@19.1.13)
-      '@sbddesign/bui-icons': 0.0.3
-      '@sbddesign/bui-tokens': 0.0.3
+      '@sbddesign/bui-icons': 0.0.4
+      '@sbddesign/bui-tokens': 0.0.4
       lit: 3.3.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
