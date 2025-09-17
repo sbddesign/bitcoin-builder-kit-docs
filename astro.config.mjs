@@ -1,14 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLlmsTxt from 'starlight-llms-txt';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://bitcoin-builder-kit-docs.netlify.app/',
 	integrations: [
 		starlight({
 			title: 'Bitcoin Builder Kit',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			customCss: ['./src/styles/global.css'],
+			plugins: [starlightLlmsTxt()],
 			head: [
 				{
 					tag: 'script',
